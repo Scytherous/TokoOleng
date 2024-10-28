@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () { 
-    // return view('welcome'); 
     return redirect()->route('backend.login'); 
 }); 
 Route::get('backend/beranda', [BerandaController::class, 'berandaBackend'])
