@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             'role' => '1', 
             'status' => 1, 
             'hp' => '0812345678901', 
-            'password' => bcrypt('P@55word'), 
+            'password' => bcrypt('password'), 
         ]); 
 
         User::create([ 
