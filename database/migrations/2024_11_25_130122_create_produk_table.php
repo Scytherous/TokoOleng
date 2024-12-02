@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('produk', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('kategori_id'); 
-            $table->foreignId('user_id'); 
+            $table->unsignedBigInteger('kategori_id');
+            $table->unsignedBigInteger('user_id');
+            // $table->foreignId('user_id'); 
             $table->boolean('status'); 
             $table->string('nama_produk'); 
             $table->text('detail'); 
@@ -23,7 +24,7 @@ return new class extends Migration
             $table->float('berat'); 
             $table->string('foto'); // Thumbnail image 
             $table->foreign('kategori_id')->references('id')->on('kategori'); 
-            // $table->foreign('user_id')->references('id')->on('user'); 
+            $table->foreign('user_id')->references('id')->on('users'); 
             $table->timestamps();
         });
     }
